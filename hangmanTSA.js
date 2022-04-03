@@ -56,7 +56,9 @@ function updateHangmanImg(){
 
 function checkIfGameWon() {
     if (wordStatus == answer) {
-      document.getElementById('keyboard').innerHTML = '<p>You Won!</p>';
+        document.getElementById('keyboard').innerHTML = '<p>You Won!!</p>';
+
+      
     }
 }
   
@@ -69,6 +71,7 @@ function checkIfGameLost() {
 
 function updateMistakes() {
     document.getElementById('mistakes').innerHTML = mistakes;
+    alert(answer);
 }
   
 function reset() {
