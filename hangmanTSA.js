@@ -1,5 +1,5 @@
 
-//i didnnt think this would be so complex
+//i didnt think this would be so complex
 
 var words = ["design", "coding", "cybersecurity", "computer", "science", "data", "technology", "digital",
 "video", "dragster", "engineering", "robotics", "scivis", "cad", "software", "hardware", "system", "robotics", "videogame",
@@ -8,7 +8,7 @@ var words = ["design", "coding", "cybersecurity", "computer", "science", "data",
 "moneel", "lakshay", "tyler", "ausmit", "hazem", "ebaad", "edward", "khoa", "trinity", "santiago"]
 
 let answer = "";
-let maxWrong = "6";
+let maxWrong = "4";
 let mistakes = "0";
 let guessed = [];
 let wordStatus = null;
@@ -51,7 +51,15 @@ function guessedWord() {
 }
 
 function updateHangmanImg(){
-    document.getElementById('hangmanImg').src = 'hangman' + mistakes + '.png';
+    if(mistakes == 1){
+        document.getElementById('hangmanImg1').src = localStorage.getItem('sec' + mistakes);
+    } else if (mistakes == 2){
+        document.getElementById('hangmanImg2').src = localStorage.getItem('sec' + mistakes);
+    } else if (mistakes == 3){
+        document.getElementById('hangmanImg3').src = localStorage.getItem('sec' + mistakes);
+    }else if (mistakes == 4){
+        document.getElementById('hangmanImg4').src = localStorage.getItem('sec' + mistakes);
+    }
 }
 
 function checkIfGameWon() {
@@ -65,7 +73,7 @@ function checkIfGameWon() {
 function checkIfGameLost() {
     if (mistakes == maxWrong){
         document.getElementById('wordSpotlight').innerHTML = 'The answer was: ' + answer;
-        document.getElementById('keyboard').innerHTML = 'You Lost!';
+        document.getElementById('keyboard').innerHTML = '<p>You Lost!</p>';
     }
 }
 
@@ -77,7 +85,10 @@ function updateMistakes() {
 function reset() {
     mistakes = 0;
     guessed = [];
-    document.getElementById('hangmanImg').src = 'hangman0.png';
+    document.getElementById('hangmanImg1').src = '';
+    document.getElementById('hangmanImg2').src = '';
+    document.getElementById('hangmanImg3').src = '';
+    document.getElementById('hangmanImg4').src = '';
     
     updateMistakes();
     pickWord();

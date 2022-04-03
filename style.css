@@ -25,6 +25,10 @@ body.customize{
   background-size: cover;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .hidden{
   display: none;
 }
@@ -33,6 +37,7 @@ p{
   font-family: Raleway;
 }
 
+<<<<<<< HEAD
 @media (max-width: 992px) {
   nav.navbar {
     background-image: url(background.jpg);
@@ -93,3 +98,5 @@ p{
   text-align: center;
   padding: 40px;
 }
+=======
+>>>>>>> 9f32e29dd8043c570fb53c6043d9d24b21859007
